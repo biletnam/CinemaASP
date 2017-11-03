@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "BlueHall";
+}
+<h2 style="color:blue">BlueHall</h2>
+<input type="date" name="date" class="form-control"/>
+<select class="form-control">
+    @foreach (var s in ViewBag.sessions)
+    {
+        <option value="value">@s.FilmLibrary.Title</option>
+    }
+</select>
+<table class="table tablefix">
+
+    <tr>
+        <th></th>
+@for (var i = 1; i <= 10; i++)
+{
+<th>@i</th>
+}
+    </tr>
+@for (var i = 1; i <= 12; i++)
+{
+    <tr>
+        <th>@i</th>
+        @for (var j = 1; j <= 10; j++)
+        {
+            <td>
+                 <input type="checkbox" class="form-control checkfix" value="@i.@j" name="places[]" />
+            </td>
+        }
+    </tr>
+}
+
+</table>
+
+<table>
+    <tr>
+        <td></td>
+    </tr>
+</table>
+
